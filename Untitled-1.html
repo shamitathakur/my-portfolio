@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home - My Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>Hello, <span id="username"></span>!</p>
+    <a href="resume.pdf" target="_blank">View My Resume</a><br>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        document.getElementById("username").innerText = localStorage.getItem("loggedInUser") || "Guest";
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "exit.html";
+        }
+    </script>
+</body>
+</html>
